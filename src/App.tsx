@@ -19,7 +19,6 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<Index />} />
         <Route path="/blog/:slug" element={<Articulo />} />
-      
       </Routes>
       <WhatsAppButton />
     </Router>
