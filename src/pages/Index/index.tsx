@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Mousewheel, Pagination,  } from "swiper/modules";
+import { articulos } from "../Blog/data/blog.ts";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -24,46 +25,40 @@ export default function Index() {
         </a>
       </section>
 
-      <section className="py-12 px-6 bg-blue-50">
+      <section className="py-12 px-10 bg-blue-50">
         <h2 className="text-2xl font-bold text-blue-600 text-center mb-8">Últimas entradas del blog</h2>
         <div className="max-w-3xl mx-auto">
-          <Swiper
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: true,
-            }}
-            direction="horizontal"
-            slidesPerView={2}
-            spaceBetween={25}
-            loop={true}
-            speed={800}
-            mousewheel={true}
-            pagination={{ clickable: true }}
-           
-            modules={[Mousewheel, Pagination, Autoplay]}
-            className="w-full max-w-md h-96 mx-auto mySwiper"
-          >
-            <SwiperSlide>
-              <div className="bg-white p-6 rounded-lg shadow text-center h-full flex flex-col justify-center">
-                <h3 className="text-lg font-semibold text-blue-700 mb-2">¿Por qué necesitas una licencia de funcionamiento?</h3>
-                <p className="text-gray-600 text-sm mb-4">Conoce los riesgos de operar sin licencia y cómo obtenerla fácilmente.</p>
-                <a href="/blog/licencia-de-funcionamiento" className="text-blue-500 hover:underline text-sm">Leer más</a>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="bg-white p-6 rounded-lg shadow text-center h-full flex flex-col justify-center">
-                <h3 className="text-lg font-semibold text-blue-700 mb-2">Checklist de Protección Civil para tu negocio</h3>
-                <p className="text-gray-600 text-sm mb-4">Evita clausuras con esta guía práctica para cumplir con Protección Civil.</p>
-                <a href="/blog/proteccion-civil-checklist" className="text-blue-500 hover:underline text-sm">Leer más</a>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="bg-white p-6 rounded-lg shadow text-center h-full flex flex-col justify-center">
-                <h3 className="text-lg font-semibold text-blue-700 mb-2">Cómo evitar multas en trámites municipales</h3>
-                <p className="text-gray-600 text-sm mb-4">Consejos clave para mantener tus permisos al día y sin sorpresas.</p>
-                <a href="/blog/evitar-multas-tramites" className="text-blue-500 hover:underline text-sm">Leer más</a>
-              </div>
-            </SwiperSlide>
+                  <Swiper
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: true,
+                    }}
+                    direction="horizontal"
+                    slidesPerView={2}
+                    spaceBetween={50}
+                    loop={true}
+                    speed={800}
+                    mousewheel={true}
+                    pagination={{ clickable: true }}
+                    modules={[Mousewheel, Pagination, Autoplay]}
+                    className="w-full max-w-md h-96 mx-auto mySwiper"
+                  >
+            {articulos.map((post) => (
+              <SwiperSlide key={post.id}>
+                <div className="bg-white p-6 rounded-lg shadow text-center h-full flex flex-col justify-center">
+                  <img
+                    src={post.imagen}
+                    alt={post.titulo}
+                    className="w-full h-40 object-cover rounded mb-4"
+                  />
+                  <h3 className="text-lg font-semibold text-blue-700 mb-2">{post.titulo}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{post.resumen}</p>
+                  <a href={`/blog/${post.slug}`} className="text-blue-500 hover:underline text-sm">
+                    Leer más
+                  </a>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
     </section>

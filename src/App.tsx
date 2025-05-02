@@ -6,7 +6,8 @@ import Navbar from "./components/Navbar/navbar";
 import WhatsAppButton from "./components/WhatsAppButton/whatsappbutton";
 import Articulo from "./pages/Blog/Articulo";
 import Blog from "./pages/Blog/blog";
-import { articulos } from "./data/blog";
+import { articulos } from "./pages/Blog/data/blog";
+import Nosotros from "./pages/Nosotros/nosotros";
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/blog/:slug" element={<Articulo />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<Index />} />
+        <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/blog/:slug" element={<Articulo />} />
       </Routes>
       <WhatsAppButton />

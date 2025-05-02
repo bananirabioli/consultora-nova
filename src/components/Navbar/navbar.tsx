@@ -18,7 +18,7 @@ export default function Navbar() {
     `block px-4 py-2 text-sm md:text-base ${
       location.pathname === path
         ? "text-blue-600 font-semibold"
-        : "text-gray-700 hover:text-blue-600"
+        : "text-gray-700 hover:text-blue-600 transition duration-300"
     }`;
 
   return (
@@ -29,11 +29,11 @@ export default function Navbar() {
         }`}
       >
         <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <div className="text-2xl font-bold text-blue-600">Nova</div>
+          <div className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-800 transition duration-300">Nova</div>
           <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="text-gray-700 hover:text-blue-600 focus:outline-none transition duration-300"
             >
               <svg
                 className="w-6 h-6"
@@ -92,7 +92,7 @@ export default function Navbar() {
             <Link to="/nosotros" onClick={() => setMenuOpen(false)} className={navLinkClass("/nosotros")}>
               Nosotros
             </Link>
-            <Link to="/blog" onClick={() => setMenuOpen(false)} className={navLinkClass("src/pages/Blog/blog")}>
+            <Link to="/blog" onClick={() => setMenuOpen(false)} className={navLinkClass("/blog")}>
               Blog
             </Link>
           </div>

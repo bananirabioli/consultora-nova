@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import MailIcon from "@heroicons/react/24/outline/EnvelopeIcon";
+import PhoneIcon from "@heroicons/react/24/outline/PhoneIcon";
 
 export default function Contacto() {
   useEffect(() => {
@@ -53,16 +55,27 @@ export default function Contacto() {
 
   return (
     <div className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6">Contáctanos</h1>
-
-      <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-        <p className="text-gray-700 mb-2">
-          Si tienes dudas o necesitas una asesoría personalizada, no dudes en ponerte en contacto con nosotros. Estamos para ayudarte en tus trámites.
+      <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 shadow-md rounded-lg p-6 mb-8 border border-blue-100">
+        <h1 className="text-3xl font-bold text-blue-600 mb-4 flex items-center gap-2">
+          <PhoneIcon className="w-7 h-7 text-blue-500" />
+          Contáctanos
+        </h1>
+        <p className="text-gray-700 mb-4 italic">
+          ¿Tienes dudas o necesitas asesoría personalizada? Completa el formulario o contáctanos directamente.
         </p>
-        <ul className="text-gray-800 space-y-2">
-          <li><strong>Correo:</strong> contacto@administrativonova.com</li>
-          <li><strong>Teléfono:</strong> +52 3333030049</li>
-          <li><strong>Teléfono:</strong> +52 3333080486</li>
+        <ul className="text-gray-800 space-y-3">
+          <li className="flex items-center gap-2">
+            <MailIcon className="w-5 h-5 text-blue-500" />
+            <span><strong>Correo:</strong> contacto@administrativonova.com</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <PhoneIcon className="w-5 h-5 text-blue-500" />
+            <span><strong>Teléfono:</strong> +52 3333030049</span>
+          </li>
+          <li className="flex items-center gap-2">
+            <PhoneIcon className="w-5 h-5 text-blue-500" />
+            <span><strong>Teléfono:</strong> +52 3333080486</span>
+          </li>
         </ul>
       </div>
 
@@ -119,10 +132,16 @@ export default function Contacto() {
           {status === "sending" ? "Enviando..." : "Enviar"}
         </button>
         {status === "success" && (
-          <p className="text-green-600">¡Mensaje enviado con éxito! Te contactaremos pronto.</p>
+          <div className="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <strong className="font-bold">¡Éxito!</strong>
+            <span className="block sm:inline ml-2">Tu mensaje fue enviado correctamente. Te contactaremos pronto.</span>
+          </div>
         )}
         {status === "error" && (
-          <p className="text-red-600">Hubo un error al enviar. Intenta nuevamente más tarde.</p>
+          <div className="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong className="font-bold">Error:</strong>
+            <span className="block sm:inline ml-2">Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo más tarde.</span>
+          </div>
         )}
       </form>
     </div>

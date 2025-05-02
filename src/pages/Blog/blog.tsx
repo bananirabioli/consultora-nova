@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { articulos } from "../../data/blog";
+import { articulos } from "./data/blog";
 
 export default function Blog() {
   useEffect(() => {
