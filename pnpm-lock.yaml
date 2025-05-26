@@ -33,8 +33,8 @@ importers:
         specifier: ^7.6.1
         version: 7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       swiper:
-        specifier: ^11.2.7
-        version: 11.2.7
+        specifier: ^11.2.8
+        version: 11.2.8
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.9
@@ -3215,8 +3215,8 @@ packages:
   svg-parser@2.0.4:
     resolution: {integrity: sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==}
 
-  swiper@11.2.7:
-    resolution: {integrity: sha512-oPJCwdcjFMw3SoBM7AdB1RJzjT7JaE4Mg7TWceTmJ/i2OtF8L01Ct+5eOf48nG3trgR0wXFekWdfnTdl0eg6Pg==}
+  swiper@11.2.8:
+    resolution: {integrity: sha512-S5FVf6zWynPWooi7pJ7lZhSUe2snTzqLuUzbd5h5PHUOhzgvW0bLKBd2wv0ixn6/5o9vwc/IkQT74CRcLJQzeg==}
     engines: {node: '>= 4.7.0'}
 
   symbol-tree@3.2.4:
@@ -6691,7 +6691,7 @@ snapshots:
 
   svg-parser@2.0.4: {}
 
-  swiper@11.2.7: {}
+  swiper@11.2.8: {}
 
   symbol-tree@3.2.4: {}
 
